@@ -1,25 +1,25 @@
 from dataclasses import dataclass
 from typing import Dict
 
-# --- Global settings (edit to match Part 1) ---
+#Global settings
 TAX_RATE = 0.06          # 6% SST
 STANDARD_SHIP = 8.00     # RM
 EXPRESS_SHIP = 15.00     # RM
 
-# --- Data models ---
+#Data models
 @dataclass
 class Item:
     id: str
     name: str
     price: float
-    buy_n_get_1_free: int | None = None  # use Optional[int] if Python <3.10
+    buy_n_get_1_free: int | None = None
 
 @dataclass
 class CartLine:
     item: Item
     qty: int
 
-# --- Product catalog (sample) ---
+#Product catalog
 CATALOG: Dict[str, Item] = {
     "A1": Item("A1", "Reusable Tote Bag", 12.90),
     "A2": Item("A2", "Organic Coffee 250g", 24.50),
